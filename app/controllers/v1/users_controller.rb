@@ -1,7 +1,8 @@
 class V1::UsersController < ApplicationController
   def me
-    if current_user
-      render json: { user: current_user }, status: :ok
+    user = current_user
+    if user
+      render json: UserAlba.new(user).serialize, status: :ok
     else
       render json: { error: "Invalid token" }, status: :unauthorized
     end
