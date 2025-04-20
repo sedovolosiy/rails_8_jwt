@@ -1,0 +1,11 @@
+GET http://localhost:3000/v1/users/me
+Authorization: Bearer {{token}}
+
+###
+POST http://localhost:3000/v1/auth
+Content-Type: application/json
+
+{
+  "email_address": "test@test.com",
+  "password": "password"
+}
