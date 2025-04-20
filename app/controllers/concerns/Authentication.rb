@@ -38,10 +38,13 @@ module Authentication
 
   def decode
     token = get_token
+    raise JWT::DecodeError, "Token is missing" if token.blank?
+
     begin
-      JWT.decode(token, jwt_secret, true, { algorithm: "HS256" })
+      JWT.decode(token, jwt_secret, true, { algorithm: "HS256" }).first
     rescue JWT::DecodeError => e
       render json: { error: "Invalid token: #{e.message}" }, status: :unauthorized
+      nil
     end
   end
 
@@ -57,7 +60,9 @@ private
 
   def current_user
     decoded = decode
-    decoded.first["data"].with_indifferent_access
+    return unless decoded
+
+    decoded["data"].with_indifferent_access
   end
 
   def authenticate
