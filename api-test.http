@@ -1,5 +1,5 @@
 GET http://localhost:3000/v1/users/me
-Authorization: Bearer {{token}}
+Authorization: Bearer jwt_token_here
 
 ###
 POST http://localhost:3000/v1/auth
