@@ -1,8 +1,8 @@
 module Authentication
   extend ActiveSupport::Concern
 
-  ACCESS_TOKEN_EXPIRY = 15.minutes
-  REFRESH_TOKEN_EXPIRY = 7.days
+  ACCESS_TOKEN_EXPIRY = ENV.fetch("ACCESS_TOKEN_EXPIRY", 15 * 60).to_i
+  REFRESH_TOKEN_EXPIRY = ENV.fetch("REFRESH_TOKEN_EXPIRY", 7 * 24 * 60 * 60).to_i
 
   included do
     before_action :authenticate
