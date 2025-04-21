@@ -17,7 +17,8 @@ class V1::AuthController < ApplicationController
         access_token: access_token,
         refresh_token: refresh_token,
         token_type: "Bearer",
-        expires_in: ACCESS_TOKEN_EXPIRY.to_i
+        expires_in: ACCESS_TOKEN_EXPIRY.to_i,
+        refresh_token_expires_in: REFRESH_TOKEN_EXPIRY.to_i
       }, status: :ok
     else
       render json: { error: "invalid_credentials", error_description: "Invalid email or password" }, status: :unauthorized
