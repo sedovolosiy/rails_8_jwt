@@ -2,10 +2,18 @@ GET http://localhost:3000/v1/users/me
 Authorization: Bearer jwt_token_here
 
 ###
-POST http://localhost:3000/v1/auth
+POST http://localhost:3000/v1/auth/login
 Content-Type: application/json
 
 {
   "email_address": "test@test.com",
   "password": "password"
+}
+
+###
+POST http://localhost:3000/v1/auth/refresh
+Content-Type: application/json
+
+{
+  "refresh_token": "refresh_token_here",
 }
