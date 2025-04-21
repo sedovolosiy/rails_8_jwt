@@ -3,7 +3,6 @@ module Authentication
 
   ACCESS_TOKEN_EXPIRY = 15.minutes
   REFRESH_TOKEN_EXPIRY = 7.days
-  REFRESH_TOKEN_COOKIE = :refresh_token # legacy, не используется
 
   included do
     before_action :authenticate
