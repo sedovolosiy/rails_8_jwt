@@ -56,13 +56,12 @@ bin/rails test
 To build and run with Docker:
 ```sh
 docker build -t rails_8_jwt .
-docker run -d -p 80:80 -e RAILS_MASTER_KEY=<your_key> --name rails_8_jwt rails_8_jwt
+docker run -d -p 80:80 --name rails_8_jwt rails_8_jwt
 ```
 
 ## Environment Variables
 
 - `JWT_SECRET` — secret for signing JWT (required)
-- `RAILS_MASTER_KEY` — key for decrypting credentials
 
 ## License
 
