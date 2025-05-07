@@ -22,6 +22,7 @@ This project is an example of an API built with Ruby on Rails 8 using JWT (JSON 
    ```sh
    cp .example.env .env
    # edit .env and set JWT_SECRET
+   # openssl rand -base64 32 to generate new JWT_SECRET
    ```
 
 3. Prepare the database:

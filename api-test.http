@@ -17,3 +17,18 @@ Content-Type: application/json
 {
   "refresh_token": "refresh_token_here",
 }
+
+###
+POST http://localhost:3000/v1/auth/logout
+Content-Type: application/json
+
+###
+POST http://localhost:3000/v1/auth/signup
+Content-Type: application/json
+
+{
+  "email_address": "test7@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+###
